@@ -1,17 +1,21 @@
-FROM alpine:latest
+FROM ubuntu:latest
 
-RUN apk add python3 
+RUN apt-get update -y
 
-RUN apk add py3-pip
+RUN apt-get install -y python3
 
-WORKDIR /app 
+RUN apt-get install -y python3-pip
+
+COPY ./requirements.txt /app/requirements.txt
+
+WORKDIR /app
 
 COPY . /app
 
-RUN pip3 install -r requirements.txt 
+RUN pip install -r requirements.txt
 
 EXPOSE 5000
 
-ENTRYPOINT ["python3"]
+ENTRYPOINT [ "python3" ]
 
-CMD [ "app.py"]
+CMD [ "app.py" ]
