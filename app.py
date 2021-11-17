@@ -21,7 +21,7 @@ def stocks():
 
 @app.route('/hello/<message>')
 def hello_message(message):
-    return f'<h1>Welcome {escape(message)}!</h1>'
+    return f'<h1>Welcome today {escape(message)}!</h1>'
 
 
 if __name__ == '__main__':
