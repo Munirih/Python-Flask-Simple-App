@@ -25,4 +25,4 @@ def hello_message(message):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='18.191.245.16')
+    app.run(debug=True)
